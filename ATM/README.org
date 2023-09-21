@@ -1,0 +1,11 @@
+* Compile
+iit@iit-H61MLV:~/Unit-Testing/ATM$ javac -cp .:libs/hamcrest-core-1.3.jar:libs/junit-4.12.jar *.java
+
+
+iit@iit-H61MLV:~/Unit-Testing/ATM$ java -cp .:libs/hamcrest-core-1.3.jar:libs/junit-4.12.jar AccountTest 
+
+* Result
+iit@iit-H61MLV:~/Unit-Testing/ATM$ java -cp .:libs/hamcrest-core-1.3.jar:libs/junit-4.12.jar AccountTest 
+testCalcSavingWithdrawWithInvalidAmount(AccountTest): expected:<0.0> but was:<-100.0>
+Some tests failed.
+
