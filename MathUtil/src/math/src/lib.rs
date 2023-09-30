@@ -165,4 +165,105 @@ mod tests {
         let result = FunctionCollection::factorial(2);
         assert_eq!(result, 2, "F3-TID2 Failed: Expected the result to be 2, but got {}", result);
     }
+
+    #[test]
+    fn test_find_max_for_empty_list() {
+        let result = FunctionCollection::find_max(&[]);
+        assert_eq!(result, i32::MIN, "F4-TID1 Failed: Expected the result to be {}, but got {}", i32::MIN, result);
+    }
+
+    #[test]
+    fn test_find_max_for_normal_list() {
+        let result = FunctionCollection::find_max(&[2]);
+        assert_eq!(result, 2, "F4-TID2 Failed: Expected the result to be {}, but got {}", 2, result);
+    }
+
+    #[test]
+    fn test_is_empty_string_for_empty_string() {
+        let result = FunctionCollection::is_empty_string(&String::from(""));
+        assert!(result, "F5-TID1 Failed: Expected the result to be {}, but got {}", true, result);
+    }
+
+    #[test]
+    fn test_is_empty_string_for_nonempty_string() {
+        let result = FunctionCollection::is_empty_string(&String::from("abhijit"));
+        assert!(!result, "F5-TID2 Failed: Expected the result to be {}, but got {}", false, result);
+    }
+
+    #[test]
+    fn test_count_even_number_for_empty_list() {
+        let result = FunctionCollection::count_even_numbers(&[]);
+        assert_eq!(result,0, "F6-TID1 Failed: Expected the result to be {}, but got {}", 0, result);
+    }
+
+    #[test]
+    fn test_count_even_number_for_even_list() {
+        let result = FunctionCollection::count_even_numbers(&[2]);
+        assert_eq!(result,1, "F6-TID2 Failed: Expected the result to be {}, but got {}", 1, result);
+    }
+
+    #[test]
+    fn test_count_even_number_for_odd_list() {
+        let result = FunctionCollection::count_even_numbers(&[3]);
+        assert_eq!(result,0, "F6-TID3 Failed: Expected the result to be {}, but got {}", 0, result);
+    }
+
+    #[test]
+    fn test_is_prime_with_input_1() {
+        let result = FunctionCollection::is_prime(1);
+        assert!(!result, "F7-TID1 Failed: Expected the result to be {}, but got {}", false, result);
+    }
+
+    #[test]
+    fn test_is_prime_with_input_2() {
+        let result = FunctionCollection::is_prime(2);
+        assert!(result, "F7-TID2 Failed: Expected the result to be {}, but got {}", true, result);
+    }
+
+    #[test]
+    fn test_is_prime_with_prime_number() {
+        let result = FunctionCollection::is_prime(3);
+        assert!(result, "F7-TID3 Failed: Expected the result to be {}, but got {}", true, result);
+    }
+
+    #[test]
+    fn test_is_prime_with_nonprime_number() {
+        let result = FunctionCollection::is_prime(4);
+        assert!(!result, "F7-TID4 Failed: Expected the result to be {}, but got {}", false, result);
+    }
+
+    #[test]
+    fn test_fibonacci_with_input_1() {
+        let result = FunctionCollection::fibonacci(1);
+        assert_eq!(result,&[0,1], "F8-TID1 Failed: Expected the result to be {}, but got {:?}", 1, result);
+    }
+    #[test]
+    fn test_fibonacci_with_usual_input() {
+        let result = FunctionCollection::fibonacci(3);
+        assert_eq!(result,&[0,1,1], "F8-TID2 Failed: Expected the result to be {}, but got {:?}", 1, result);
+    }
+
+    #[test]
+    fn test_find_min_with_empty_list() {
+        let result = FunctionCollection::find_min(&[]);
+        assert_eq!(result,i32::MAX, "F9-TID1 Failed: Expected the result to be {}, but got {:?}", i32::MAX, result);
+    }
+
+    #[test]
+    fn test_find_min_with_usual_list() {
+        let result = FunctionCollection::find_min(&[2]);
+        assert_eq!(result,2, "F9-TID2 Failed: Expected the result to be {}, but got {:?}", 2, result);
+    }
+
+    #[test]
+    fn test_calculate_average_with_empty_list() {
+        let result = FunctionCollection::find_min(&[]);
+        assert_eq!(result,0, "F10-TID1 Failed: Expected the result to be {}, but got {:?}", 0, result);
+    }
+
+    #[test]
+    fn test_calculate_average_with_usual_list() {
+        let result = FunctionCollection::find_min(&[2]);
+        assert_eq!(result,2, "F10-TID2 Failed: Expected the result to be {}, but got {:?}", 2, result);
+    }
 }
