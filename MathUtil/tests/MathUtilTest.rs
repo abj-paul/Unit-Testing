@@ -1,9 +1,10 @@
-use super::*;
 
 // Import the Rust testing module
 #[cfg(test)]
 mod tests {
-
+    mod super::math;
+    use math::MathUtil::FunctionCollection;
+    
     // Test case 1: Test with n = 0
     #[test]
     fn test_sum_up_to_n_with_zero() {
